@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <input type="range" class="range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
+    <span id="rangeValue">0</span>
+</div>
+
+
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Sans-Serif;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #a9aaaa;
+    }
+    .box{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:20px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.05), #ff0066);
+border-radius: 40px;
+        box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fff;
+    }
+    .range {
+        width: 400px;
+        height: 15px;
+        appearance: none;
+        background: #ef1a1a;
+       outline: none;
+        border-radius: 15px;
+
+        overflow: hidden;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.1), -5px -5px 10px #fff, inset 5px 5px 5px rgba(0,0,0,0.1);
+
+    }
+
+.range::-webkit-slider-thumb{
+    appearance: none;   /* убираем шарик скроллинга */
+    width: 15px;
+    height: 15px;
+    background: greenyellow ;
+    border-radius: 50%;
+    border: 2px solid #0074cf;
+    box-shadow: -407px 0 0 400px #27a0ff;
+    cursor: pointer;
+}
+#rangeValue {
+    position: relative;
+    text-align: center;
+    width: 60px;
+    font-size: 1.25em;
+    color: #fff;
+    background: #0a4dc3;
+    margin-left: 15px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px #fff, inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 5px rgba(255, 255, 255, 0.25);
+    font-weight: 500;
+}
+
+</style>
+<script>
+    function rangeSlider(value){
+        document.getElementById('rangeValue').innerHTML =value;
+    }
+</script>
+</body>
+</html>
